@@ -49,10 +49,10 @@ variable "os_disk" {
   type = object({
     caching              = string
     storage_account_type = string
-    diff_disk_settings = object({
+    diff_disk_settings = optional(object({
       option    = string
       placement = optional(string, "CacheDisk")
-    })
+    }))
     disk_encryption_set_id           = optional(string)
     disk_size_gb                     = optional(number)
     name                             = optional(string)
