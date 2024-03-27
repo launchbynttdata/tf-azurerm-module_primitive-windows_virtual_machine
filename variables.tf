@@ -60,7 +60,7 @@ variable "os_disk" {
     security_encryption_type         = optional(string)
     write_accelerator_enabled        = optional(bool, false)
   })
-  description = "(Optional) A os_disk block as defined below."
+  description = "An os_disk block."
 }
 
 variable "source_image_reference" {
@@ -70,5 +70,5 @@ variable "source_image_reference" {
     sku       = string
     version   = string
   })
-  description = "(Optional) A source_image_reference block as defined below."
+  description = "A source_image_reference block."
 }
