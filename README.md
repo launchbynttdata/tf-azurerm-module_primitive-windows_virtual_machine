@@ -108,8 +108,8 @@ If `make check` target is successful, developer is good to commit the code to pr
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | <= 1.5.5 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | =3.77.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0, <= 1.5.5 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 3.77 |
 
 ## Providers
 
@@ -125,7 +125,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [azurerm_windows_virtual_machine.public_vm](https://registry.terraform.io/providers/hashicorp/azurerm/3.77.0/docs/resources/windows_virtual_machine) | resource |
+| [azurerm_windows_virtual_machine.public_vm](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/windows_virtual_machine) | resource |
 
 ## Inputs
 
