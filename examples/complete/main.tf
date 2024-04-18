@@ -18,7 +18,9 @@ resource "random_string" "admin_password" {
 
 module "virtual_machine" {
 
-  source = "../.."
+  source  = "d2lqlh14iel5k2.cloudfront.net/module_primitive/windows_virtual_machine/azurerm"
+
+  version = "~> 1.0"
 
   name                = local.virtual_machine_name
   resource_group_name = local.resource_group_name
@@ -36,7 +38,8 @@ module "virtual_machine" {
 }
 
 module "resource_group" {
-  source = "git::https://github.com/launchbynttdata/tf-azurerm-module_primitive-resource_group.git?ref=1.0.0"
+  source  = "d2lqlh14iel5k2.cloudfront.net/module_primitive/resource_group/azurerm"
+  version = "~> 1.0"
 
   name     = local.resource_group_name
   location = var.location
@@ -46,7 +49,8 @@ module "resource_group" {
 }
 
 module "network_interface" {
-  source = "git::https://github.com/launchbynttdata/tf-azurerm-module_primitive-network_interface.git?ref=1.0.0"
+  source  = "d2lqlh14iel5k2.cloudfront.net/module_primitive/network_interface/azurerm"
+  version = "~> 1.0"
 
   name                = local.network_interface_name
   location            = var.location
@@ -61,7 +65,8 @@ module "network_interface" {
 }
 
 module "virtual_network" {
-  source = "git::https://github.com/launchbynttdata/tf-azurerm-module_collection-virtual_network.git?ref=1.0.0"
+  source  = "d2lqlh14iel5k2.cloudfront.net/module_collection/virtual_network/azurerm"
+  version = "~> 1.0"
 
   network_map = local.modified_network_map
 
@@ -70,7 +75,8 @@ module "virtual_network" {
 
 # This module generates the resource-name of resources based on resource_type, naming_prefix, env etc.
 module "resource_names" {
-  source = "git::https://github.com/launchbynttdata/tf-launch-module_library-resource_name.git?ref=1.0.0"
+  source  = "d2lqlh14iel5k2.cloudfront.net/module_library/resource_name/launch"
+  version = "~> 1.0"
 
   for_each = var.resource_names_map
 
