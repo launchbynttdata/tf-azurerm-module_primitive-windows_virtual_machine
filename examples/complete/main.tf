@@ -18,7 +18,7 @@ resource "random_string" "admin_password" {
 
 module "virtual_machine" {
 
-  source = "d2lqlh14iel5k2.cloudfront.net/module_primitive/windows_virtual_machine/azurerm"
+  source = "terraform.registry.launch.nttdata.com/module_primitive/windows_virtual_machine/azurerm"
 
   version = "~> 1.0"
 
@@ -38,7 +38,7 @@ module "virtual_machine" {
 }
 
 module "resource_group" {
-  source  = "d2lqlh14iel5k2.cloudfront.net/module_primitive/resource_group/azurerm"
+  source  = "terraform.registry.launch.nttdata.com/module_primitive/resource_group/azurerm"
   version = "~> 1.0"
 
   name     = local.resource_group_name
@@ -49,7 +49,7 @@ module "resource_group" {
 }
 
 module "network_interface" {
-  source  = "d2lqlh14iel5k2.cloudfront.net/module_primitive/network_interface/azurerm"
+  source  = "terraform.registry.launch.nttdata.com/module_primitive/network_interface/azurerm"
   version = "~> 1.0"
 
   name                = local.network_interface_name
@@ -65,7 +65,7 @@ module "network_interface" {
 }
 
 module "virtual_network" {
-  source  = "d2lqlh14iel5k2.cloudfront.net/module_collection/virtual_network/azurerm"
+  source  = "terraform.registry.launch.nttdata.com/module_collection/virtual_network/azurerm"
   version = "~> 1.0"
 
   network_map = local.modified_network_map
@@ -75,7 +75,7 @@ module "virtual_network" {
 
 # This module generates the resource-name of resources based on resource_type, naming_prefix, env etc.
 module "resource_names" {
-  source  = "d2lqlh14iel5k2.cloudfront.net/module_library/resource_name/launch"
+  source  = "terraform.registry.launch.nttdata.com/module_library/resource_name/launch"
   version = "~> 1.0"
 
   for_each = var.resource_names_map

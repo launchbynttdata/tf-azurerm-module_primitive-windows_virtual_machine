@@ -13,17 +13,17 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_random"></a> [random](#provider\_random) | 3.6.1 |
+| <a name="provider_random"></a> [random](#provider\_random) | 3.6.2 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_virtual_machine"></a> [virtual\_machine](#module\_virtual\_machine) | d2lqlh14iel5k2.cloudfront.net/module_primitive/windows_virtual_machine/azurerm | ~> 1.0 |
-| <a name="module_resource_group"></a> [resource\_group](#module\_resource\_group) | d2lqlh14iel5k2.cloudfront.net/module_primitive/resource_group/azurerm | ~> 1.0 |
-| <a name="module_network_interface"></a> [network\_interface](#module\_network\_interface) | d2lqlh14iel5k2.cloudfront.net/module_primitive/network_interface/azurerm | ~> 1.0 |
-| <a name="module_virtual_network"></a> [virtual\_network](#module\_virtual\_network) | d2lqlh14iel5k2.cloudfront.net/module_collection/virtual_network/azurerm | ~> 1.0 |
-| <a name="module_resource_names"></a> [resource\_names](#module\_resource\_names) | d2lqlh14iel5k2.cloudfront.net/module_library/resource_name/launch | ~> 1.0 |
+| <a name="module_virtual_machine"></a> [virtual\_machine](#module\_virtual\_machine) | terraform.registry.launch.nttdata.com/module_primitive/windows_virtual_machine/azurerm | ~> 1.0 |
+| <a name="module_resource_group"></a> [resource\_group](#module\_resource\_group) | terraform.registry.launch.nttdata.com/module_primitive/resource_group/azurerm | ~> 1.0 |
+| <a name="module_network_interface"></a> [network\_interface](#module\_network\_interface) | terraform.registry.launch.nttdata.com/module_primitive/network_interface/azurerm | ~> 1.0 |
+| <a name="module_virtual_network"></a> [virtual\_network](#module\_virtual\_network) | terraform.registry.launch.nttdata.com/module_collection/virtual_network/azurerm | ~> 1.0 |
+| <a name="module_resource_names"></a> [resource\_names](#module\_resource\_names) | terraform.registry.launch.nttdata.com/module_library/resource_name/launch | ~> 1.0 |
 
 ## Resources
 
