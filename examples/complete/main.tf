@@ -66,7 +66,7 @@ module "network_interface" {
 
 module "virtual_network" {
   source  = "terraform.registry.launch.nttdata.com/module_collection/virtual_network/azurerm"
-  version = "~> 1.2.0"
+  version = "~> 1.2"
 
   network_map = local.modified_network_map
 
