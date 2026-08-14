@@ -17,10 +17,7 @@ resource "random_string" "admin_password" {
 }
 
 module "virtual_machine" {
-
-  source = "terraform.registry.launch.nttdata.com/module_primitive/windows_virtual_machine/azurerm"
-
-  version = "~> 1.0"
+  source = "../.."
 
   name                = local.virtual_machine_name
   resource_group_name = local.resource_group_name
@@ -39,7 +36,7 @@ module "virtual_machine" {
 
 module "resource_group" {
   source  = "terraform.registry.launch.nttdata.com/module_primitive/resource_group/azurerm"
-  version = "~> 1.0"
+  version = "~> 1.2"
 
   name     = local.resource_group_name
   location = var.location
@@ -76,7 +73,7 @@ module "virtual_network" {
 # This module generates the resource-name of resources based on resource_type, naming_prefix, env etc.
 module "resource_names" {
   source  = "terraform.registry.launch.nttdata.com/module_library/resource_name/launch"
-  version = "~> 1.0"
+  version = "~> 2.0"
 
   for_each = var.resource_names_map
 
