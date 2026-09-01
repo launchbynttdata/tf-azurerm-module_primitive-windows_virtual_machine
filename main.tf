@@ -32,8 +32,8 @@ resource "azurerm_windows_virtual_machine" "public_vm" {
   }
 
   lifecycle {
+    # Computed by Azure after apply; not exposed as module inputs.
     ignore_changes = [
-      admin_password,
       computer_name,
       disk_controller_type,
       vm_agent_platform_updates_enabled,
