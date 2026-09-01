@@ -32,6 +32,11 @@ resource "azurerm_windows_virtual_machine" "public_vm" {
   }
 
   lifecycle {
-    ignore_changes = [admin_password]
+    ignore_changes = [
+      admin_password,
+      computer_name,
+      disk_controller_type,
+      vm_agent_platform_updates_enabled,
+    ]
   }
 }
