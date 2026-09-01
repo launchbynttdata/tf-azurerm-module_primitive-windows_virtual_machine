@@ -31,4 +31,7 @@ resource "azurerm_windows_virtual_machine" "public_vm" {
     version   = var.source_image_reference.version
   }
 
+  lifecycle {
+    ignore_changes = [admin_password]
+  }
 }
