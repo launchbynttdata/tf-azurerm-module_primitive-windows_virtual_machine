@@ -31,4 +31,12 @@ resource "azurerm_windows_virtual_machine" "public_vm" {
     version   = var.source_image_reference.version
   }
 
+  lifecycle {
+    # Computed by Azure after apply; not exposed as module inputs.
+    ignore_changes = [
+      computer_name,
+      disk_controller_type,
+      vm_agent_platform_updates_enabled,
+    ]
+  }
 }

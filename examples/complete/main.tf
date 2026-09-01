@@ -10,17 +10,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-resource "random_string" "admin_password" {
-  length  = var.length
-  numeric = var.number
-  special = var.special
+resource "random_password" "admin_password" {
+  length           = var.length
+  special          = true
+  min_lower        = 1
+  min_upper        = 1
+  min_numeric      = 1
+  min_special      = 1
+  override_special = "!@#$%*"
 }
 
 module "virtual_machine" {
-
-  source = "terraform.registry.launch.nttdata.com/module_primitive/windows_virtual_machine/azurerm"
-
-  version = "~> 1.0"
+  source = "../.."
 
   name                = local.virtual_machine_name
   resource_group_name = local.resource_group_name
@@ -28,7 +29,7 @@ module "virtual_machine" {
   size                = var.size
 
   admin_username = var.admin_username
-  admin_password = random_string.admin_password.result
+  admin_password = random_password.admin_password.result
 
   os_disk                = var.os_disk
   source_image_reference = var.source_image_reference
@@ -39,7 +40,7 @@ module "virtual_machine" {
 
 module "resource_group" {
   source  = "terraform.registry.launch.nttdata.com/module_primitive/resource_group/azurerm"
-  version = "~> 1.0"
+  version = "~> 1.2"
 
   name     = local.resource_group_name
   location = var.location
@@ -76,7 +77,7 @@ module "virtual_network" {
 # This module generates the resource-name of resources based on resource_type, naming_prefix, env etc.
 module "resource_names" {
   source  = "terraform.registry.launch.nttdata.com/module_library/resource_name/launch"
-  version = "~> 1.0"
+  version = "~> 2.0"
 
   for_each = var.resource_names_map
 

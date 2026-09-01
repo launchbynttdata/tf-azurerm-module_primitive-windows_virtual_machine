@@ -42,6 +42,6 @@ output "admin_username" {
 
 output "admin_password" {
   description = "Password of the administrative user"
-  value       = random_string.admin_password.result
+  value       = random_password.admin_password.result
   sensitive   = true
 }
