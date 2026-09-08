@@ -42,9 +42,9 @@ func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 		fmt.Println(err)
 	}
 
-	vmId := terraform.Output(t, ctx.TerratestTerraformOptions(), "id")
-	vmName := terraform.Output(t, ctx.TerratestTerraformOptions(), "name")
-	rgName := terraform.Output(t, ctx.TerratestTerraformOptions(), "resource_group_name")
+	vmId := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "id")
+	vmName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "name")
+	rgName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "resource_group_name")
 
 	t.Run("TestAlwaysSucceeds", func(t *testing.T) {
 		assert.Equal(t, "foo", "foo", "Should always be the same!")
